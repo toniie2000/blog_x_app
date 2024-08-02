@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up</title>
+    <style>
+        body {
+            margin:
+                0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        input {
+            display: block;
+            margin: 10px;
+        }
+
+        div {
+            display: flex;
+            justify-items: center;
+            align-items: center;
+            border: solid 2px;
+            height: 370px;
+            /* Increased height for more form elements */
+            width: 300px;
+            /* Increased width for better layout */
+        }
+
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% for message in messages %}
+                <p>{{ message  }}</p>
+                {% endfor %}
+                <h1>sign-up</h1>
+                <label for="username">Username</label>
+                <input type="text" placeholder="username" name="username">
+                <label for="Email">Email</label>
+                <input type="email" placeholder="email" name="email">
+                <label for="password">Password</label>
+                <input type="password" placeholder="password" name="password">
+                <label for="confirm_password">confirm password</label>
+                <input type="password" placeholder="confirm password" name="confirm_password">
+                <input type="submit" value="sign-up">
+
+                Have a account?<a class="nav-link" href="{% url 'login' %}">login</a>
+            </form>
+        </div>
+    </header>
+</body>
+
+</html>

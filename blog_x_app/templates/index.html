@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="mt-4">
+    <h1> Welcome to Blog x</h1>
+    <p>This is the home page.</p>
+    <p><a href="{% url 'post_list' %}" class="btn btn-primary">View Blog Posts</a></p>
+</div>
+{% endblock %}

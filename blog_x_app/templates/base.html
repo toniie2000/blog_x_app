@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Site</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{% url 'index' %}">My Blog</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'post_list' %}">Blog Posts</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'create_post' %}">Create a Post</a>
+                </li>
+            </ul>
+            <ul >
+            
+        </div>
+        <ul class="my-2 my-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">logout</a>
+
+            </li>
+
+        </ul>
+    </nav>
+    <div class="container">
+        {% block content %}
+        {% block Create %}
+        {% endblock %}
+        {% endblock %}
+    </div>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>
